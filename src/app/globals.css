@@ -1,3 +1,179 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --background: #000000;
+  --foreground: #000000;
+  --primary: #1363c6;
+  --secondary: #15ace1;
+  --light: #f4f7fe;
+  --dark: #14183e;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #f4f7fe;
+    --foreground: #000000;
+  }
+}
+
+@font-face {
+  font-family: "yekan";
+  src: url("/fonts/BYekan+.ttf");
+}
+
+@font-face {
+  font-family: "yekanBold";
+  src: url("/fonts/BYekan+\ Bold.ttf");
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  text-align: right !important;
+  direction: rtl;
+}
+
+/* footer  */
+
+.footer {
+  background: url(../../public/footer.png) center center no-repeat !important;
+  background-size: contain !important;
+  background-color: var(--dark) !important;
+}
+
+.footer-links:hover span {
+  padding-right: 3px;
+}
+
+.footer-links > * {
+  transition: all 0.3s !important;
+}
+
+/* header */
+
+.margin-animate {
+  margin-top: -300px;
+  animation: slideDown 0.5s forwards;
+}
+
+@keyframes slideDown {
+  from {
+    margin-top: -300px;
+  }
+  to {
+    margin-top: 0;
+  }
+}
+
+/* contact */
+
+.hero-section-contact,
+.bg-blue {
+  background: url(../../public/bg-hero.png) center center no-repeat !important;
+  background-size: contain !important;
+  background-color: var(--primary) !important;
+}
+
+/* projects */
+.img-bg-box {
+  object-position: top;
+  object-fit: cover;
+  filter: brightness(75%);
+  transition: all 0.5s ease;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.box:hover .img-bg-box {
+  transform: scale(1.15);
+}
+
+.box {
+  border-radius: 8px !important;
+}
+
+.box::after {
+  content: "";
+  background: linear-gradient(rgba(20, 24, 62, 0), var(--dark));
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 500;
+  pointer-events: none;
+}
+
+/* service */
+.box-service:hover .btn-service {
+  width: 100% !important;
+}
+
+/* about */
+
+.backdrop {
+  background-color: #ffffff27;
+  backdrop-filter: blur(4px);
+}
+
+/* swiper */
+@media (max-width: 768px) {
+  .mobile-image {
+    align-self: flex-end;
+    margin-top: auto;
+  }
+}
+
+.swiper {
+  width: 100%;
+  /* height: 100vh; */
+  background: #000;
+  direction: ltr;
+}
+
+.mySwiper,
+.swiper-slide {
+  padding-bottom: 0 !important;
+}
+
+.bg-slider {
+  background: url(../../public/bg-hero.png) left center !important;
+  background-size: contain !important;
+  background-color: var(--primary) !important;
+}
+
+.swiper-slide {
+  font-size: 18px;
+  color: #fff;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 40px 60px;
+}
+
+.parallax-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 130%;
+  height: 100%;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+
+.swiper-slide .title {
+  font-size: 41px;
+  font-weight: 300;
+}
+
+.swiper-slide .subtitle {
+  font-size: 21px;
+}
+
+.swiper-slide .text {
+  font-size: 14px;
+  max-width: 400px;
+  line-height: 1.3;
+}
